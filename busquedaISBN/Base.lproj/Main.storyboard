@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Intoduzca el ISBN" borderStyle="roundedRect" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="TCM-fY-5IC">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="center" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Intoduzca el ISBN" borderStyle="roundedRect" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="TCM-fY-5IC">
                                 <rect key="frame" x="184" y="96" width="252" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="252" id="unJ-B5-1ug"/>
@@ -43,27 +43,39 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="VYD-d5-7D2">
-                                <rect key="frame" x="184" y="170" width="252" height="376"/>
+                                <rect key="frame" x="184" y="170" width="232" height="96"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="96" id="q8o-jg-bOC"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xdH-Xv-47r">
+                                <rect key="frame" x="180" y="280" width="240" height="274"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="uig-W0-h5H"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="BQ4-2W-2bk" firstAttribute="leading" secondItem="TCM-fY-5IC" secondAttribute="leading" id="3k5-Fl-a2d"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="xdH-Xv-47r" secondAttribute="bottom" constant="46" id="3qL-qt-d37"/>
                             <constraint firstItem="TCM-fY-5IC" firstAttribute="top" secondItem="BQ4-2W-2bk" secondAttribute="bottom" constant="8" id="9Kx-Nh-tHL"/>
-                            <constraint firstItem="VYD-d5-7D2" firstAttribute="trailing" secondItem="TCM-fY-5IC" secondAttribute="trailing" id="E58-OB-12M"/>
                             <constraint firstItem="VYD-d5-7D2" firstAttribute="leading" secondItem="aqn-eL-Bqj" secondAttribute="leading" id="VCC-LC-BcM"/>
                             <constraint firstItem="VYD-d5-7D2" firstAttribute="top" secondItem="aqn-eL-Bqj" secondAttribute="bottom" constant="8" id="ZUT-Vp-odt"/>
                             <constraint firstItem="TCM-fY-5IC" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="10" id="ePz-mZ-lsO"/>
                             <constraint firstItem="TCM-fY-5IC" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="76" id="j4A-a0-vAI"/>
+                            <constraint firstItem="VYD-d5-7D2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="me5-vT-A1B"/>
+                            <constraint firstItem="VYD-d5-7D2" firstAttribute="centerX" secondItem="xdH-Xv-47r" secondAttribute="centerX" id="nxy-na-Sg3"/>
                             <constraint firstItem="aqn-eL-Bqj" firstAttribute="leading" secondItem="TCM-fY-5IC" secondAttribute="leading" id="qZH-wI-CUL"/>
-                            <constraint firstItem="VYD-d5-7D2" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="58" id="sDC-sd-ko9"/>
                             <constraint firstItem="aqn-eL-Bqj" firstAttribute="top" secondItem="TCM-fY-5IC" secondAttribute="bottom" constant="15" id="vml-LE-Ge8"/>
+                            <constraint firstItem="xdH-Xv-47r" firstAttribute="top" secondItem="VYD-d5-7D2" secondAttribute="bottom" constant="14" id="zRj-JJ-GbJ"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="imgPortada" destination="xdH-Xv-47r" id="Jbk-bd-kSz"/>
                         <outlet property="lblResultado" destination="aqn-eL-Bqj" id="rHe-Pk-IMO"/>
                         <outlet property="txtISBN" destination="TCM-fY-5IC" id="vmq-Ka-qZ6"/>
                         <outlet property="txtResultado" destination="VYD-d5-7D2" id="OAH-U7-iHo"/>
